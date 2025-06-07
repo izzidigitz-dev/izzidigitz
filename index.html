@@ -9,9 +9,9 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: linear-gradient(-45deg, #ff00cc, #00ffff, #00ff00, #ff0000);
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
       background-size: 400% 400%;
-      animation: backgroundShift 15s ease infinite;
+      animation: backgroundShift 20s ease infinite;
       color: #fff;
     }
 
@@ -52,28 +52,16 @@
     }
 
     .track {
+      background: #000;
       border-radius: 1rem;
       padding: 1rem;
       text-align: center;
-      color: #fff;
-      background-size: 400% 400%;
-      animation: trackGradientShift 10s ease infinite;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 15px #00ffff80, 0 0 25px #ff00ff40;
+      transition: box-shadow 0.3s ease;
     }
 
-    .track:nth-child(odd) {
-      background: linear-gradient(135deg, #39ff14, #00bfff);
-    }
-
-    .track:nth-child(even) {
-      background: linear-gradient(135deg, #ff073a, #ffae00);
-      animation-delay: 5s;
-    }
-
-    @keyframes trackGradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .track:hover {
+      box-shadow: 0 0 20px #00ffff, 0 0 35px #ff00ff;
     }
 
     audio {
@@ -91,13 +79,18 @@
       color: #fff;
       font-size: 1.5rem;
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #00ffff;
     }
 
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.5);
     }
   </style>
 </head>
