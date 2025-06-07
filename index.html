@@ -11,11 +11,11 @@
       font-family: 'Arial', sans-serif;
       background: linear-gradient(-45deg, #ff0080, #7928ca, #00c3ff, #ffcb05);
       background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
+      animation: backgroundShift 20s ease infinite;
       color: #fff;
     }
 
-    @keyframes gradientShift {
+    @keyframes backgroundShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
@@ -55,33 +55,26 @@
       border-radius: 1rem;
       padding: 1rem;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       color: #fff;
-    }
-
-    /* Unique animated backgrounds per track */
-    .track:nth-child(1) {
-      background: linear-gradient(45deg, #ff5f6d, #ffc371);
       background-size: 400% 400%;
-      animation: trackShift1 10s ease infinite;
+      animation: trackGradientShift 10s ease infinite;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
-    .track:nth-child(2) {
-      background: linear-gradient(45deg, #36d1dc, #5b86e5);
-      background-size: 400% 400%;
-      animation: trackShift2 10s ease infinite;
+    /* Alternate animations for different track colors */
+    .track:nth-child(odd) {
+      background: linear-gradient(135deg, #00f260, #0575e6);
     }
 
-    @keyframes trackShift1 {
+    .track:nth-child(even) {
+      background: linear-gradient(135deg, #f7971e, #ffd200);
+      animation-delay: 5s;
+    }
+
+    @keyframes trackGradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
-    }
-
-    @keyframes trackShift2 {
-      0% { background-position: 100% 0%; }
-      50% { background-position: 0% 100%; }
-      100% { background-position: 100% 0%; }
     }
 
     audio {
@@ -143,7 +136,7 @@
 
   <section class="socials">
     <p>Follow me:</p>
-    <a href="https://soundcloud.com/user-529499697?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">SoundCloud</a>
+    <a href="https://soundcloud.com/user-529499697" target="_blank">SoundCloud</a>
     <a href="https://www.youtube.com/@izzidigitz" target="_blank">YouTube</a>
     <a href="https://www.instagram.com/izzidigitz/" target="_blank">Instagram</a>
   </section>
