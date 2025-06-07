@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>izzidigitz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
       background-size: 400% 400%;
-      animation: backgroundShift 20s ease infinite;
+      animation: bgAnimation 15s ease infinite;
       color: #fff;
     }
 
-    @keyframes backgroundShift {
+    @keyframes bgAnimation {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
@@ -27,21 +27,15 @@
     }
 
     header h1 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Black Ops One', sans-serif;
       font-size: 4rem;
       letter-spacing: 2px;
       margin: 0;
+      color: #0ff;
     }
 
     header p {
       font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
     }
 
     .gallery {
@@ -56,17 +50,24 @@
       border-radius: 1rem;
       padding: 1rem;
       text-align: center;
-      box-shadow: 0 0 15px #00ffff80, 0 0 25px #ff00ff40;
-      transition: box-shadow 0.3s ease;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+      transition: box-shadow 0.5s ease;
     }
 
     .track:hover {
-      box-shadow: 0 0 20px #00ffff, 0 0 35px #ff00ff;
+      box-shadow: 0 0 40px rgba(255, 0, 255, 0.6);
     }
 
-    audio {
+    .track h2 {
+      color: #0ff;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    iframe {
       width: 100%;
-      margin-top: 1rem;
+      height: 300px;
+      border: none;
     }
 
     .socials {
@@ -76,21 +77,21 @@
 
     .socials a {
       margin: 0 1rem;
-      color: #fff;
+      color: #0ff;
       font-size: 1.5rem;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .socials a:hover {
-      color: #00ffff;
+      color: #f0f;
     }
 
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
     }
   </style>
 </head>
@@ -104,31 +105,25 @@
     <div class="track">
       <h2>Waiting</h2>
       <iframe 
-        width="100%" 
-        height="300" 
         scrolling="no" 
-        frameborder="no" 
         allow="autoplay" 
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1819389849&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1819389849&color=%2300ffff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
       </iframe>
     </div>
 
     <div class="track">
       <h2>This Kind of Life</h2>
       <iframe 
-        width="100%" 
-        height="300" 
         scrolling="no" 
-        frameborder="no" 
         allow="autoplay" 
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1830195174&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1830195174&color=%2300ffff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
       </iframe>
     </div>
   </section>
 
   <section class="socials">
     <p>Follow me:</p>
-    <a href="https://soundcloud.com/user-529499697" target="_blank">SoundCloud</a>
+    <a href="https://soundcloud.com/user-529499697?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">SoundCloud</a>
     <a href="https://www.youtube.com/@izzidigitz" target="_blank">YouTube</a>
     <a href="https://www.instagram.com/izzidigitz/" target="_blank">Instagram</a>
   </section>
