@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Music Name</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #ff0080, #7928ca);
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    audio {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .socials {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .socials a {
+      margin: 0 1rem;
+      color: #fff;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Artist Name</h1>
+    <p>Welcome to my world of sound 🎶</p>
+  </header>
+
+  <section class="gallery">
+    <div class="track">
+      <h2>Track Title 1</h2>
+      <audio controls>
+        <source src="your-song1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="track">
+      <h2>Track Title 2</h2>
+      <audio controls>
+        <source src="your-song2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <!-- Add more tracks as needed -->
+  </section>
+
+  <section class="socials">
+    <p>Follow me:</p>
+    <a href="https://open.spotify.com/your-link" target="_blank">Spotify</a>
+    <a href="https://soundcloud.com/your-link" target="_blank">SoundCloud</a>
+    <a href="https://youtube.com/your-link" target="_blank">YouTube</a>
+    <a href="https://instagram.com/your-link" target="_blank">Instagram</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Your Artist Name. All rights reserved.
+  </footer>
+</body>
+</html>
