@@ -21,13 +21,33 @@
       100% { background-position: 0% 50%; }
     }
 
+    nav {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #8000ff;
+    }
+
     header {
       text-align: center;
       padding: 3rem 1rem;
     }
 
     header h1 {
-      font-family: 'Orbitron', sans-serif;
       font-size: 4rem;
       color: #8000ff;
       letter-spacing: 3px;
@@ -64,9 +84,20 @@
       margin-bottom: 0.5rem;
     }
 
-    iframe {
+    .iframe-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+
+    .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 300px;
+      height: 100%;
       border: none;
     }
 
@@ -96,39 +127,49 @@
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#tracks">Tracks</a>
+    <a href="#socials">Socials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header>
     <h1>izzidigitz</h1>
     <p>Welcome to my world of sound 🎶</p>
   </header>
 
-  <section class="gallery">
+  <section id="tracks" class="gallery">
     <div class="track">
       <h2>Waiting</h2>
-      <iframe 
-        scrolling="no" 
-        allow="autoplay" 
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1819389849&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-      </iframe>
+      <div class="iframe-wrapper">
+        <iframe 
+          scrolling="no" 
+          allow="autoplay" 
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1819389849&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+        </iframe>
+      </div>
     </div>
 
     <div class="track">
       <h2>This Kind of Life</h2>
-      <iframe 
-        scrolling="no" 
-        allow="autoplay" 
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1830195174&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-      </iframe>
+      <div class="iframe-wrapper">
+        <iframe 
+          scrolling="no" 
+          allow="autoplay" 
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1830195174&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+        </iframe>
+      </div>
     </div>
   </section>
 
-  <section class="socials">
+  <section id="socials" class="socials">
     <p>Follow me:</p>
     <a href="https://soundcloud.com/user-529499697" target="_blank">SoundCloud</a>
     <a href="https://www.youtube.com/@izzidigitz" target="_blank">YouTube</a>
     <a href="https://www.instagram.com/izzidigitz/" target="_blank">Instagram</a>
   </section>
 
-  <footer>
+  <footer id="contact">
     &copy; 2025 izzidigitz. All rights reserved.
   </footer>
 </body>
