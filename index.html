@@ -118,24 +118,39 @@
       border: none;
     }
 
-    .discography {
+    .gear {
       padding: 2rem;
-      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 1rem;
+      box-shadow: 0 0 30px rgba(128, 0, 255, 0.3);
     }
 
-    .discography h2 {
+    .gear h2 {
+      text-align: center;
       color: #ff00ff;
       font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
-    .discography ul {
+    .gear ul {
       list-style: none;
       padding: 0;
-      font-size: 1.1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
-    .discography li {
-      margin: 1rem 0;
+    .gear li {
+      background: #111;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 0 10px rgba(128, 0, 255, 0.2);
+    }
+
+    .gear li strong {
+      color: #8000ff;
     }
 
     .socials {
@@ -192,19 +207,19 @@
   </section>
 
   <section class="gear">
-  <h2>izzidigitz Gear</h2>
-  <ul>
-    <li><strong>DAW:</strong> Ableton Live</li>
-    <li><strong>Controller:</strong> Ableton Push 2</li>
-    <li><strong>Computer:</strong> Mac Studio & MacBook</li>
-    <li><strong>Instruments:</strong> Saxophone, Voice (sampled)</li>
-    <li><strong>Plugins:</strong> FabFilter, Soundtoys, Valhalla</li>
-    <li><strong>Audio Interface:</strong> Focusrite Scarlett 2i2</li>
-    <li><strong>Monitors:</strong> Yamaha HS5</li>
-    <li><strong>Headphones:</strong> Beyerdynamic DT 770 Pro</li>
-    <li><strong>Cloud Storage:</strong> iCloud (Collect All & Save!)</li>
-  </ul>
-</section>
+    <h2>izzidigitz Gear</h2>
+    <ul>
+      <li><strong>DAW:</strong> Ableton Live</li>
+      <li><strong>Controller:</strong> Ableton Push 2</li>
+      <li><strong>Computer:</strong> Mac Studio & MacBook</li>
+      <li><strong>Instruments:</strong> Saxophone, Voice (sampled)</li>
+      <li><strong>Plugins:</strong> FabFilter, Soundtoys, Valhalla</li>
+      <li><strong>Audio Interface:</strong> Focusrite Scarlett 2i2</li>
+      <li><strong>Monitors:</strong> Yamaha HS5</li>
+      <li><strong>Headphones:</strong> Beyerdynamic DT 770 Pro</li>
+      <li><strong>Cloud Storage:</strong> iCloud (Collect All & Save!)</li>
+    </ul>
+  </section>
 
   <section class="socials">
     <p>Follow me:</p>
