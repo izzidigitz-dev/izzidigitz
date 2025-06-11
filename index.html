@@ -21,33 +21,13 @@
       100% { background-position: 0% 50%; }
     }
 
-    nav {
-      text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #8000ff;
-    }
-
     header {
       text-align: center;
       padding: 3rem 1rem;
     }
 
     header h1 {
+      font-family: 'Orbitron', sans-serif;
       font-size: 4rem;
       color: #8000ff;
       letter-spacing: 3px;
@@ -84,20 +64,9 @@
       margin-bottom: 0.5rem;
     }
 
-    .iframe-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 1rem;
-    }
-
-    .iframe-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+    iframe {
       width: 100%;
-      height: 100%;
+      height: 300px;
       border: none;
     }
 
@@ -118,61 +87,6 @@
       color: #f0f;
     }
 
-    /* Contact Form Styles */
-    #contact {
-      text-align: center;
-      padding: 3rem 1rem;
-      animation: fadeInScale 1s ease forwards;
-      opacity: 0;
-      transform: scale(0.95);
-    }
-
-    @keyframes fadeInScale {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    #contact h2 {
-      color: #8000ff;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    form {
-      max-width: 500px;
-      margin: auto;
-      display: grid;
-      gap: 1rem;
-      text-align: left;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border-radius: 0.5rem;
-      border: none;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    form button {
-      background: #8000ff;
-      color: white;
-      padding: 0.8rem 2rem;
-      border: none;
-      border-radius: 0.5rem;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    form button:hover {
-      background: #a84dff;
-      transform: scale(1.05);
-    }
-
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -182,58 +96,36 @@
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#tracks">Tracks</a>
-    <a href="#socials">Socials</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <header>
     <h1>izzidigitz</h1>
     <p>Welcome to my world of sound 🎶</p>
   </header>
 
-  <section id="tracks" class="gallery">
+  <section class="gallery">
     <div class="track">
       <h2>Waiting</h2>
-      <div class="iframe-wrapper">
-        <iframe 
-          scrolling="no" 
-          allow="autoplay" 
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1819389849&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-        </iframe>
-      </div>
+      <iframe 
+        scrolling="no" 
+        allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1819389849&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+      </iframe>
     </div>
 
     <div class="track">
       <h2>This Kind of Life</h2>
-      <div class="iframe-wrapper">
-        <iframe 
-          scrolling="no" 
-          allow="autoplay" 
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1830195174&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-        </iframe>
-      </div>
+      <iframe 
+        scrolling="no" 
+        allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1830195174&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+      </iframe>
     </div>
   </section>
 
-  <section id="socials" class="socials">
+  <section class="socials">
     <p>Follow me:</p>
     <a href="https://soundcloud.com/user-529499697" target="_blank">SoundCloud</a>
     <a href="https://www.youtube.com/@izzidigitz" target="_blank">YouTube</a>
     <a href="https://www.instagram.com/izzidigitz/" target="_blank">Instagram</a>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form action="https://formsubmit.co/you@example.com" method="POST">
-      <input type="hidden" name="_subject" value="New message from izzidigitz site">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
   </section>
 
   <footer>
