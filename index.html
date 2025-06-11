@@ -15,7 +15,24 @@
       overflow-x: hidden;
     }
 
-    /* Loading Screen */
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #000000);
+      background-size: 400% 400%;
+      animation: bgAnimation 15s ease infinite;
+    }
+
+    @keyframes bgAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     #loader {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -35,22 +52,6 @@
     @keyframes pulse {
       0%, 100% { opacity: 0.3; }
       50% { opacity: 1; }
-    }
-
-    /* Background animation */
-    #background {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: linear-gradient(-45deg, #0f0c29, #302b63, #000000);
-      background-size: 400% 400%;
-      animation: bgAnimation 15s ease infinite;
-      z-index: -1;
-    }
-
-    @keyframes bgAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     @keyframes glow {
@@ -105,7 +106,7 @@
       padding: 1rem;
       text-align: center;
       box-shadow: 0 0 25px rgba(128, 0, 255, 0.3);
-      transition: box-shadow 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
+      transition: all 0.6s ease;
       opacity: 0;
       transform: translateY(30px);
     }
@@ -223,13 +224,9 @@
   </footer>
 
   <script>
-    // Loader
     window.addEventListener("load", () => {
       document.getElementById("loader").style.display = "none";
-    });
 
-    // Animate track cards on scroll
-    document.addEventListener("DOMContentLoaded", () => {
       const tracks = document.querySelectorAll('.track');
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
