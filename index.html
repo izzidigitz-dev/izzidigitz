@@ -6,13 +6,45 @@
   <title>izzidigitz</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      background: #000;
+      overflow-x: hidden;
+    }
+
+    /* Loading Screen */
+    #loader {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #loader h1 {
+      font-size: 3rem;
+      color: #8000ff;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Background animation */
+    #background {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
       background: linear-gradient(-45deg, #0f0c29, #302b63, #000000);
       background-size: 400% 400%;
       animation: bgAnimation 15s ease infinite;
-      color: #fff;
+      z-index: -1;
     }
 
     @keyframes bgAnimation {
@@ -95,6 +127,26 @@
       border: none;
     }
 
+    .discography {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .discography h2 {
+      color: #ff00ff;
+      font-size: 2rem;
+    }
+
+    .discography ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+
+    .discography li {
+      margin: 1rem 0;
+    }
+
     .socials {
       text-align: center;
       padding: 2rem 1rem;
@@ -121,6 +173,9 @@
   </style>
 </head>
 <body>
+  <div id="loader"><h1>izzidigitz loading...</h1></div>
+  <div id="background"></div>
+
   <header>
     <h1>izzidigitz</h1>
     <p>Welcome to my world of sound 🎶</p>
@@ -146,6 +201,16 @@
     </div>
   </section>
 
+  <section class="discography">
+    <h2>Discography</h2>
+    <ul>
+      <li><strong>2025:</strong> Neon Pulse (EP)</li>
+      <li><strong>2024:</strong> Moon Phase // Live from the Void</li>
+      <li><strong>2023:</strong> Ghost Vox (Single)</li>
+      <li><strong>2022:</strong> Machines Feel Too (Album)</li>
+    </ul>
+  </section>
+
   <section class="socials">
     <p>Follow me:</p>
     <a href="https://soundcloud.com/user-529499697" target="_blank">SoundCloud</a>
@@ -158,6 +223,12 @@
   </footer>
 
   <script>
+    // Loader
+    window.addEventListener("load", () => {
+      document.getElementById("loader").style.display = "none";
+    });
+
+    // Animate track cards on scroll
     document.addEventListener("DOMContentLoaded", () => {
       const tracks = document.querySelectorAll('.track');
       const observer = new IntersectionObserver(entries => {
