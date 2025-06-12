@@ -6,16 +6,49 @@
   <title>izzidigitz</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-      color: #fff;
-      background: url('Copilot_20250612_080825.png') no-repeat center center fixed;
-      background-size: cover;
+   html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  background: url('Copilot_20250612_080825.png') no-repeat;
+  overflow-x: hidden;
+}
 
-      overflow-x: hidden;
-    }
+/* Overlay for contrast */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* Desktop: fixed background */
+@media (min-width: 769px) {
+  html, body {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+/* Mobile: scrollable and resized background */
+@media (max-width: 768px) {
+  html, body {
+    background-attachment: scroll;
+    background-size: contain;
+    background-position: center top;
+  }
+
+  body::before {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+
 
     @keyframes bgAnimation {
       0% { background-position: 0% 50%; }
