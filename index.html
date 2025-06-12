@@ -179,7 +179,7 @@
     transform: translate(-50%, -50%);
     font-family: 'Brush Script MT', cursive;
     font-size: 10rem;
-    color: rgba(204, 102, 255, 0.25);
+    color: rgba(204, 102, 255, 0.6);
     text-shadow: none;
     pointer-events: none;
     z-index: 1;
@@ -288,11 +288,11 @@
     <p>Welcome to my world of sound 🎶</p>
   </header>
 
-  <div class="sensation-overlay">
+  <div class="sensation-overlay" style="pointer-events:none; z-index:3; position:absolute; width:100%; height:100%; top:0; left:0; display:flex; align-items:center; justify-content:center;">
   <h2 class="sensation-title-overlay">Sensations</h2>
 </div>
 
-  <section class="gallery">
+  <section class="gallery" style="position:relative; z-index:2;">
     <div class="track">
       <h2>Waiting</h2>
       <iframe scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1819389849&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
