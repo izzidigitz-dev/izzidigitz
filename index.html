@@ -6,90 +6,126 @@
   <title>izzidigitz</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    @keyframes glitch {
-      0% {
-        text-shadow: 2px 2px red;
-      }
-      20% {
-        text-shadow: -2px -2px lime;
-      }
-      40% {
-        text-shadow: 2px -2px blue;
-      }
-      60% {
-        text-shadow: -2px 2px yellow;
-      }
-      80% {
-        text-shadow: 2px 2px magenta;
-      }
-      100% {
-        text-shadow: -2px -2px cyan;
-      }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #000000);
+      background-size: 400% 400%;
+      animation: bgAnimation 15s ease infinite;
+      overflow-x: hidden;
     }
 
     @keyframes bgAnimation {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(-45deg, #0f0c29, #302b63, #000000);
-      background-size: 400% 400%;
-      animation: bgAnimation 20s ease infinite;
-      color: white;
+    #loader {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #loader h1 {
+      font-size: 3rem;
+      color: #8000ff;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 10px #8000ff, 0 0 20px #f0f; }
+      50% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #8000ff; }
     }
 
     header {
       text-align: center;
-      padding: 2rem 1rem 1rem;
-      font-size: 3rem;
-      animation: glitch 2s infinite;
+      padding: 3rem 1rem;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      color: #8000ff;
+      letter-spacing: 3px;
+      margin: 0;
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .sensation {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .sensation-title {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 8rem;
+      color: #cc66ff;
+      text-shadow: 0 0 8px #a64dff, 0 0 16px #8000ff;
+      animation: pulse 3s ease-in-out infinite;
     }
 
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
     }
 
     .track {
-      background: black;
-      border-radius: 12px;
+      background: #000;
+      border-radius: 1rem;
       padding: 1rem;
-      width: 300px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      box-shadow: 0 0 25px rgba(128, 0, 255, 0.3);
+      transition: all 0.6s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .track.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .track h2 {
+      color: #8000ff;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
     }
 
     iframe {
       width: 100%;
-      height: 166px;
+      height: 300px;
       border: none;
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      opacity: 0.6;
-    }
-
-    .socials {
-      text-align: center;
-      margin: 1rem;
     }
 
     .gear {
       padding: 2rem;
-      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 1rem;
+      box-shadow: 0 0 30px rgba(128, 0, 255, 0.3);
     }
 
     .gear h2 {
+      text-align: center;
+      color: #ff00ff;
       font-size: 2rem;
       margin-bottom: 1rem;
     }
@@ -97,43 +133,164 @@
     .gear ul {
       list-style: none;
       padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
     .gear li {
-      margin: 0.5rem 0;
+      background: #111;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 0 10px rgba(128, 0, 255, 0.2);
     }
-  </style>
+
+    .gear li strong {
+      color: #8000ff;
+    }
+
+    .socials {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .socials a {
+      margin: 0 1rem;
+      color: #8000ff;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #f0f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .sensation-title-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Brush Script MT', cursive;
+    font-size: 10rem;
+    color: rgba(204, 102, 255, 0.6);
+    text-shadow: none;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .gallery {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    z-index: 2;
+  }
+  .sensation-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .sensation-title-overlay {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 10rem;
+    color: rgba(204, 102, 255, 0.05);
+    text-shadow: none;
+  }
+
+  .gallery {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    z-index: 1;
+  }
+</style>
 </head>
 <body>
-  <header>izzidigitz</header>
+  <div id="loader"><h1>izzidigitz loading...</h1></div>
 
-  <section class="gallery">
+  <header>
+    <h1 class="glitch" data-text="izzidigitz">izzidigitz</h1>
+    <p>Welcome to my world of sound 🎶</p>
+  </header>
+
+  <div class="sensation-overlay" style="pointer-events:none; z-index:3; position:absolute; width:100%; height:100%; top:0; left:0; display:flex; align-items:center; justify-content:center;">
+  <h2 class="sensation-title-overlay">Sensations</h2>
+</div>
+
+  <section class="gallery" style="position:relative; z-index:2;">
     <div class="track">
-      <iframe scrolling="no" frameborder="no" allow="autoplay" 
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/your_track_id_here&color=%23444444&inverse=false&auto_play=false&show_user=true">
-      </iframe>
+      <h2>Waiting</h2>
+      <iframe scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1819389849&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
     </div>
-    <!-- Add more .track sections here -->
+
+    <div class="track">
+      <h2>This Kind of Life</h2>
+      <iframe scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1830195174&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    </div>
   </section>
 
   <section class="gear">
-    <h2>Gear List</h2>
+    <h2>izzidigitz Gear</h2>
     <ul>
-      <li>Mac Studio / MacBook</li>
-      <li>Ableton Live with Push 2</li>
-      <li>Saxophone</li>
-      <li>Microphone (for voice sampling)</li>
-      <li>Cloud storage setup with 'collect all and save'</li>
-      <!-- Add more gear here -->
+      <li><strong>DAW:</strong> Ableton Live</li>
+      <li><strong>Controller:</strong> Ableton Push 2</li>
+      <li><strong>Computer:</strong> Mac Studio & MacBook</li>
+      <li><strong>Instruments:</strong> Saxophone, Voice (sampled)</li>
+      <li><strong>Plugins:</strong> FabFilter, Soundtoys, Valhalla</li>
+      <li><strong>Audio Interface:</strong> Focusrite Scarlett 2i2</li>
+      <li><strong>Monitors:</strong> Yamaha HS5</li>
+      <li><strong>Headphones:</strong> Beyerdynamic DT 770 Pro</li>
+      <li><strong>Cloud Storage:</strong> iCloud (Collect All & Save!)</li>
     </ul>
   </section>
 
-  <div class="socials">
-    <p>Follow: @izzidigitz</p>
-  </div>
+  <section class="socials">
+    <p>Follow me:</p>
+    <a href="https://soundcloud.com/user-529499697" target="_blank">SoundCloud</a>
+    <a href="https://www.youtube.com/@izzidigitz" target="_blank">YouTube</a>
+    <a href="https://www.instagram.com/izzidigitz/" target="_blank">Instagram</a>
+  </section>
 
   <footer>
     &copy; 2025 izzidigitz. All rights reserved.
   </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("loader").style.display = "none";
+
+      const tracks = document.querySelectorAll('.track');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      tracks.forEach(track => {
+        observer.observe(track);
+      });
+    });
+  </script>
 </body>
 </html>
