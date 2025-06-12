@@ -40,8 +40,8 @@
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
     }
 
     @keyframes glow {
@@ -73,9 +73,10 @@
 
     .sensation-title {
       font-family: 'Brush Script MT', cursive;
-      font-size: 6rem;
+      font-size: 8rem;
       color: #cc66ff;
       text-shadow: 0 0 8px #a64dff, 0 0 16px #8000ff;
+      animation: pulse 3s ease-in-out infinite;
     }
 
     .gallery {
