@@ -181,6 +181,25 @@
       box-shadow: 0 0 15px rgba(128, 0, 255, 0.4);
     }
 
+    .play-btn {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      color: #fff;
+      background: linear-gradient(45deg, #8000ff, #ff00ff);
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(128, 0, 255, 0.5);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .track:hover .play-btn {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
+    }
+
     .gear {
       padding: 2rem;
       max-width: 800px;
@@ -252,11 +271,13 @@
   <section class="gallery">
     <div class="track">
       <h2>Waiting</h2>
+      <button class="play-btn">▶ Play</button>
       <iframe scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1819389849&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
     </div>
 
     <div class="track">
       <h2>This Kind of Life</h2>
+      <button class="play-btn">▶ Play</button>
       <iframe scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1830195174&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
     </div>
   </section>
@@ -303,6 +324,15 @@
 
       tracks.forEach(track => {
         observer.observe(track);
+      });
+    });
+
+    document.querySelectorAll('.play-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const iframe = btn.nextElementSibling;
+        const src = new URL(iframe.src);
+        src.searchParams.set('auto_play', 'true');
+        iframe.src = src.toString();
       });
     });
   </script>
