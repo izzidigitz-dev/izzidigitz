@@ -147,15 +147,14 @@
     }
 
     .track {
-      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(32,0,48,0.9));
+      background: #000;
       border-radius: 1rem;
       padding: 1rem;
       text-align: center;
       box-shadow: 0 0 25px rgba(128, 0, 255, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+      transition: all 0.6s ease;
       opacity: 0;
       transform: translateY(30px);
-      position: relative;
     }
 
     .track.visible {
@@ -163,46 +162,16 @@
       transform: translateY(0);
     }
 
-    .track:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 0 30px #8000ff, 0 0 60px #ff00ff, 0 0 10px #fff;
-    }
-
     .track h2 {
-      color: #fff;
-      background: linear-gradient(45deg, #8000ff, #ff00ff);
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-      font-size: 1.4rem;
-      text-shadow: 0 0 10px #8000ff;
-      margin-bottom: 1rem;
+      color: #8000ff;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
     }
 
-    .track iframe {
+    iframe {
       width: 100%;
       height: 300px;
       border: none;
-      border-radius: 0.5rem;
-      box-shadow: 0 0 15px rgba(128, 0, 255, 0.4);
-    }
-
-    .play-btn {
-      display: inline-block;
-      margin-bottom: 0.75rem;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      color: #fff;
-      background: linear-gradient(45deg, #8000ff, #ff00ff);
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(128, 0, 255, 0.5);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .track:hover .play-btn {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
     }
 
     .gear {
@@ -266,6 +235,69 @@
   </style>
 </head>
 <body>
-  <!-- Page content remains unchanged -->
+  <div id="loader"><h1>izzidigitz loading...</h1></div>
+
+  <header>
+    <h1 class="glitch" data-text="izzidigitz">izzidigitz</h1>
+    <p>Welcome</p>
+  </header>
+
+  <section class="gallery">
+    <div class="track">
+      <h2>Waiting</h2>
+      <iframe scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1819389849&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <div class="track">
+      <h2>This Kind of Life</h2>
+      <iframe scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1830195174&color=%238000ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+  </section>
+
+  <section class="gear">
+    <h2>izzidigitz Gear</h2>
+    <ul>
+      <li><strong>DAW:</strong> Ableton Live</li>
+      <li><strong>Controller:</strong> Ableton Push 2</li>
+      <li><strong>Computer:</strong> Mac Studio & MacBook</li>
+      <li><strong>Instruments:</strong> Saxophone, Voice (sampled)</li>
+      <li><strong>Plugins:</strong> FabFilter, Soundtoys, Valhalla</li>
+      <li><strong>Audio Interface:</strong> Focusrite Scarlett 2i2</li>
+      <li><strong>Monitors:</strong> Yamaha HS5</li>
+      <li><strong>Headphones:</strong> Beyerdynamic DT 770 Pro</li>
+      <li><strong>Cloud Storage:</strong> iCloud (Collect All & Save!)</li>
+    </ul>
+  </section>
+
+  <section class="socials">
+    <p>Follow me:</p>
+    <a href="https://soundcloud.com/user-529499697" target="_blank">SoundCloud</a>
+    <a href="https://www.youtube.com/@izzidigitz" target="_blank">YouTube</a>
+    <a href="https://www.instagram.com/izzidigitz/" target="_blank">Instagram</a>
+  </section>
+
+  <footer>
+    &copy; 2025 izzidigitz. All rights reserved.
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("loader").style.display = "none";
+
+      const tracks = document.querySelectorAll('.track');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      tracks.forEach(track => {
+        observer.observe(track);
+      });
+    });
+  </script>
 </body>
 </html>
